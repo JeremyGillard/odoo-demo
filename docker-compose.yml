@@ -11,8 +11,8 @@ services:
       - USER=odoo
       - PASSWORD=odoo
     volumes:
-      - odoo-web-data:/var/lib/odoo
-      - ./config:/etc/odoo
+      - web-data:/var/lib/odoo
+      # - ./config:/etc/odoo
       - ./addons:/mnt/extra-addons
   db:
     image: postgres:10
@@ -22,7 +22,7 @@ services:
       - POSTGRES_USER=odoo
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
-      - odoo-db-data:/var/lib/postgresql/data/pgdata
+      - db-data:/var/lib/postgresql/data/pgdata
 volumes:
-  odoo-web-data:
-  odoo-db-data:
+  web-data:
+  db-data:
