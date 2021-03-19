@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <!-- Top menu item -->
+
+  <menuitem id="catering_menu_root"
+    name="Catering"
+    web_icon="catering,static/description.icon.png"
+    sequence="1"/>
+
+</odoo>
