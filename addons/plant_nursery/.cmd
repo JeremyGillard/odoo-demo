@@ -1,0 +1,1 @@
+./odoo-bin -d odoo --db-filter=odoo --addons-path=addons -u plant_nursery

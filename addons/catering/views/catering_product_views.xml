@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <odoo>
+
+        <record model="ir.ui.view" id="catering_product_tree_view">
+            <field name="name">catering.product</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_product_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='product_template_attribute_value_ids']" position="after">
+                    <field name="alcohol_level" string="Alcohol level"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="catering_product_form_view">
+            <field name="name">catering.product.form</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='categ_id']" position="after">
+                    <field name="alcohol_level" string="Alcohol Level"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="product_list_action">
+            <field name="name">Products</field>
+            <field name="res_model">product.product</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="product_menu" name="Products"
+                  parent="catering_menu"
+                  action="product_list_action"/>
+
+</odoo>
